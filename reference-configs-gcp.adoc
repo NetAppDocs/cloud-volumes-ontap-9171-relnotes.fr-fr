@@ -1,0 +1,200 @@
+---
+sidebar: sidebar 
+permalink: reference-configs-gcp.html 
+keywords: google, gcp, google cloud platform, explore, standard, premium, byol, paygo, disks, supported, capacity, machine types, sizes, HA, high availability, HA pairs 
+summary: Plusieurs configurations Cloud Volumes ONTAP sont prises en charge dans Google Cloud. 
+---
+= Configurations prises en charge pour Cloud Volumes ONTAP dans Google Cloud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Plusieurs configurations Cloud Volumes ONTAP sont prises en charge dans Google Cloud.
+
+
+
+== Configurations prises en charge par licence
+
+Cloud Volumes ONTAP est disponible dans Google Cloud en tant que système à nœud unique et en tant que paire haute disponibilité (HA) de nœuds pour tolérance aux pannes et opérations non perturbatrices.
+
+La mise à niveau d'un système à nœud unique vers une paire haute disponibilité n'est pas prise en charge. Si vous souhaitez basculer entre un système à nœud unique et une paire haute disponibilité, vous devez déployer un nouveau système et répliquer les données du système existant vers le nouveau système.
+
+Cloud Volumes ONTAP peut s'exécuter sur une instance de machine virtuelle réservée ou à la demande de votre fournisseur de cloud. Les solutions qui utilisent d'autres types d'instances de machines virtuelles ne sont pas prises en charge.
+
+[role="tabbed-block"]
+====
+.Licences basées sur la capacité
+--
+[cols="h,d,d,d"]
+|===
+|  | Freemium | Optimisé ^4^ | Licence basée sur la capacité (Essentials et Professional) 
+
+
+| Capacité maximale du système (disques + stockage d'objets) | 500 Gio  a| 
+Avec une licence basée sur la capacité, chaque système Cloud Volumes ONTAP prend en charge la hiérarchisation vers le stockage objet. La capacité hiérarchisée totale peut atteindre la limite de compartiments du fournisseur de cloud. Bien que la licence n'impose aucune restriction de capacité, vous devez suivre les  https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf["Bonnes pratiques FabricPool"^] pour garantir des performances, une fiabilité et une rentabilité optimales lors de la configuration et de la gestion de la hiérarchisation.
+
+
+
+| Types de machines prises en charge ^1^  a| 
+* n1-standard-8 ^1^
+* n1-standard-32 ^1^
+* n2-standard-4
+* n2-standard-8
+* n2-standard-16
+* n2-standard-32
+* n2-standard-48
+* n2-standard-64
+
+ a| 
+* n2-standard-4
+* n2-standard-8
+
+ a| 
+* n1-standard-8 ^1^
+* n1-standard-32 ^1^
+* n2-standard-4
+* n2-standard-8
+* n2-standard-16
+* n2-standard-32
+* n2-standard-48
+* n2-standard-64
+
+
+
+
+| Types de disques pris en charge ^2^ 3+| Disques persistants équilibrés ^3^, disques persistants Performance (SSD) ^3^ et disques persistants Standard (HDD). 
+|===
+Remarques:
+
+. ^1^ Les machines de la série n1 ne sont plus disponibles pour sélection sur la NetApp Console lors du déploiement de nouvelles instances de Cloud Volumes ONTAP dans Google Cloud. Les machines de la série n1 seront conservées et prises en charge uniquement dans les anciens systèmes existants. Les nouveaux déploiements de Cloud Volumes ONTAP sont pris en charge dans Google Cloud uniquement à partir de la version 9.8. Nous recommandons de passer aux machines de la série n2, compatibles avec Cloud Volumes ONTAP 9.8 et versions ultérieures. Les machines de la série n1, cependant, resteront disponibles pour les nouveaux déploiements effectués via l'API.
++
+Le type de machine custom-4-16384 n'est plus pris en charge avec les nouveaux systèmes Cloud Volumes ONTAP. Si vous disposez d'un système existant fonctionnant sur ce type de machine, vous pouvez continuer à l'utiliser, mais nous vous recommandons de passer au type de machine n2-standard-4.
+
+. ^2^ Les limites de disque peuvent vous empêcher d'atteindre la limite de capacité maximale du système en utilisant uniquement des disques. Vous pouvez atteindre la limite de capacité en https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["transférer les données inactives vers le stockage objet"^].
++
+link:reference-limits-gcp.html["En savoir plus sur les limites de disque dans Google Cloud"].
+
+. ^3^ Les performances d'écriture améliorées sont activées lors de l'utilisation de disques persistants équilibrés et de disques persistants Performance (SSD).
++
+À partir de Cloud Volumes ONTAP 9.13.0, _Flash Cache_, une vitesse d'écriture élevée et une unité de transmission maximale (MTU) plus élevée de 8 896 octets sont disponibles pour les instances de déploiement de paire haute disponibilité suivantes :
+
++
+** n2-standard-16
+** n2-standard-32
+** n2-standard-48
+** n2-standard-64
++
+Vous pouvez activer  et une vitesse d'écriture élevée lors du déploiement d'un type d'instance compatible. Pour activer l'unité de transmission maximale de 8 896 octets, vous devez choisir VPC-1, VPC-2 ou VPC-3 pour le déploiement. La MTU plus élevée permet un débit réseau supérieur. Pour plus d'informations sur le lancement de l'un de ces déploiements, voir  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html#launching-an-ha-pair-in-google-cloud["Lancement d'une paire haute disponibilité dans Google Cloud"].
+
++
+
+NOTE: _Flash cache_, le mode d'écriture élevé et une MTU de 8 896 dépendent des fonctionnalités et ne peuvent pas être désactivés individuellement dans une instance configurée.
+
+
+
+. ^4^ À compter du 11 août 2025, la licence Cloud Volumes ONTAP Optimized est obsolète et ne sera plus disponible à l'achat ni au renouvellement sur la place de marché Google Cloud pour les abonnements à la carte (PAYGO). Pour plus d'informations, consultez https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html["Nouveautés de Cloud Volumes ONTAP"^].
+
+
+--
+.Licences basées sur les nœuds
+--
+[cols="h,d,d,d,d"]
+|===
+|  | PAYGO Explore | PAYGO Standard | PAYGO Premium | BYOL basé sur les nœuds 
+
+
+| Capacité maximale du système (disques + stockage d'objets) | 2 To ^2^ | 10 Tio | 368 Tio | 368 TiB par licence 
+
+
+| Types de machines prises en charge ^3^  a| 
+* n2-standard-4
+
+ a| 
+* n1-standard-8 ^3^
+* n2-standard-8
+
+ a| 
+* n1-standard-32 ^3^
+* n2-standard-16
+* n2-standard-32
+* n2-standard-48
+* n2-standard-64
+
+ a| 
+* n1-standard-8 ^3^
+* n1-standard-32 ^3^
+* n2-standard-4
+* n2-standard-8
+* n2-standard-16
+* n2-standard-32
+* n2-standard-48
+* n2-standard-64
+
+
+
+
+| Types de disques pris en charge 4+| Disques persistants équilibrés ^4^, disques persistants Performance (SSD) ^4^ et disques persistants Standard (HDD). 
+|===
+Remarques:
+
+. ^1^ Les limites de disque peuvent vous empêcher d'atteindre la limite de capacité maximale du système en utilisant uniquement des disques. Vous pouvez atteindre la limite de capacité en  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["transférer les données inactives vers le stockage objet"^].
++
+link:reference-limits-gcp.html["En savoir plus sur les limites de disque dans Google Cloud"].
+
+. ^2^ La hiérarchisation des données vers Google Cloud Storage n'est pas prise en charge avec PAYGO Explore.
+. ^3^ Les machines de la série n1 ne sont plus disponibles pour sélection dans la Console lors du déploiement de nouvelles instances de Cloud Volumes ONTAP sur Google Cloud. Les machines de la série n1 seront conservées et prises en charge uniquement dans les anciens systèmes existants. Les nouveaux déploiements de Cloud Volumes ONTAP sont pris en charge sur Google Cloud uniquement à partir de la version 9.8. Nous vous recommandons de passer aux machines de la série n2, compatibles avec Cloud Volumes ONTAP 9.8 et versions ultérieures. Les machines de la série n1, cependant, resteront disponibles pour les nouveaux déploiements effectués via l'API.
++
+Le type de machine custom-4-16384 n'est plus pris en charge avec les nouveaux systèmes Cloud Volumes ONTAP. Si vous disposez d'un système existant fonctionnant sur ce type de machine, vous pouvez continuer à l'utiliser, mais nous vous recommandons de passer au type de machine n2-standard-4.
+
+. ^4^ Les performances d'écriture améliorées sont activées lors de l'utilisation de disques persistants Balanced et de disques persistants Performance (SSD).
+
+
+La console affiche un type de machine supplémentaire pris en charge pour Standard et BYOL : n1-highmem-4. Cependant, ce type de machine n'est pas destiné aux environnements de production. Nous l'avons rendu disponible uniquement pour un environnement de laboratoire spécifique.
+
+À partir de la version 9.13.0 du logiciel Cloud Volumes ONTAP, _Flash Cache_, une vitesse d'écriture élevée et une unité de transmission maximale (MTU) plus élevée de 8 896 octets sont disponibles pour les instances de déploiement de la paire haute disponibilité suivantes :
+
+* n2-standard-16
+* n2-standard-32
+* n2-standard-48
+* n2-standard-64
+
+
+Vous pouvez activer  et une vitesse d'écriture élevée lors du déploiement d'un type d'instance compatible. Pour activer l'unité de transmission maximale de 8 896 octets, vous devez choisir VPC-1, VPC-2 ou VPC-3 pour le déploiement. La MTU plus élevée permet un débit réseau supérieur. Pour plus d'informations sur le lancement de l'un de ces déploiements, voir  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html#launching-an-ha-pair-in-google-cloud["Lancement d'une paire haute disponibilité dans Google Cloud"].
+
+
+NOTE: _Flash cache_, le mode d'écriture élevé et une MTU de 8 896 dépendent des fonctionnalités et ne peuvent pas être désactivés individuellement dans une instance configurée.
+
+--
+====
+Pour plus d'informations sur les types de machines spécifiques, consultez la documentation Google Cloud :
+
+* https://cloud.google.com/compute/docs/general-purpose-machines#n1_machines["types de machines à usage général de la série n1"^]
+* https://cloud.google.com/compute/docs/general-purpose-machines#n2_series["Types de machines à usage général de la série N2"^]
+
+
+
+
+== Tailles de disque prises en charge
+
+Dans Google Cloud, un agrégat peut contenir jusqu'à 6 disques qui sont tous du même type et de la même taille. Les tailles de disque suivantes sont prises en charge :
+
+* 100 Go
+* 500 Go
+* 1 To
+* 2 To
+* 4 To
+* 8 To
+* 16 To
+* 64 To
+
+
+
+
+== Régions prises en charge
+
+Pour la prise en charge des régions Google Cloud, voir https://bluexp.netapp.com/cloud-volumes-global-regions["Cloud Volumes Régions mondiales"^].

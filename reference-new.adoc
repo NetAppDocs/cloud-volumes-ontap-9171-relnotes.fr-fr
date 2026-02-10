@@ -1,0 +1,71 @@
+---
+sidebar: sidebar 
+permalink: reference-new.html 
+keywords: 'what"s new, new, features, release notes, enhancements' 
+summary: Cloud Volumes ONTAP 9.17.1 inclut une nouvelle amélioration. 
+---
+= Nouveautés de Cloud Volumes ONTAP 9.17.1
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP 9.17.1 inclut de nouvelles améliorations.
+
+De nouvelles fonctionnalités Cloud Volumes ONTAP sont également introduites dans les dernières versions de la NetApp Console. Pour plus d'informations, consultez les nouveautés  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html["Cloud Volumes ONTAP"^] gérées dans la Console.
+
+
+
+== 9.17.1 P3 (22 décembre 2025)
+
+Le correctif P3 de Cloud Volumes ONTAP 9.17.1 est désormais disponible pour la mise à niveau sur AWS, Azure et Google Cloud. La NetApp Console vous invitera à mettre à niveau vos systèmes existants vers cette version corrective.
+
+link:https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.17.1P3["Consultez la liste des bugs corrigés dans le patch P3"^] (NetApp Connexion au site d'assistance requise).
+
+
+
+== 9.17.1 P2 (04 décembre 2025)
+
+Le correctif P2 de Cloud Volumes ONTAP 9.17.1 est désormais disponible pour la mise à niveau sur AWS, Azure et Google Cloud. La NetApp Console vous invitera à mettre à niveau vos systèmes existants vers cette version corrective.
+
+link:https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.17.1P2["Consultez la liste des bugs corrigés dans le patch P2"^] (NetApp Connexion au site d'assistance requise).
+
+
+
+== 9.17.1 P1 (04 novembre 2025)
+
+Le correctif Cloud Volumes ONTAP 9.17.1 P1 est désormais disponible pour le déploiement et la mise à niveau sur AWS, Azure et Google Cloud. La NetApp Console vous invitera à mettre à niveau vos systèmes existants vers cette version corrective.
+
+link:https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.17.1P1["Consultez la liste des bugs corrigés dans le patch P1"^] (NetApp Connexion au site d'assistance requise).
+
+
+
+== Notes de mise à jour
+
+Lisez ces notes pour en savoir plus sur la mise à niveau vers cette version.
+
+
+
+=== Comment mettre à niveau
+
+Les mises à niveau de Cloud Volumes ONTAP doivent être effectuées depuis la NetApp Console. Vous ne devez pas mettre à niveau Cloud Volumes ONTAP en utilisant System Manager ou la CLI. Cela peut affecter la stabilité du système.
+
+link:http://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-updating-ontap-cloud.html["Découvrez comment effectuer la mise à jour lorsque la NetApp Console vous en informe"^].
+
+
+
+=== Chemin de mise à niveau pris en charge
+
+Vous pouvez mettre à niveau vers Cloud Volumes ONTAP 9.17.1 P1 depuis la version 9.16.1 sur AWS, Azure et Google Cloud. La NetApp Console vous invitera à mettre à niveau les systèmes Cloud Volumes ONTAP éligibles vers cette version.
+
+
+
+=== Temps d'arrêt
+
+* La mise à niveau d'un système à nœud unique met le système hors ligne pendant jusqu'à 25 minutes, durant lesquelles les E/S sont interrompues.
+* La mise à niveau d'une paire haute disponibilité est non disruptive et les E/S restent ininterrompues. Pendant ce processus de mise à niveau non disruptive, chaque nœud est mis à niveau en tandem afin de continuer à fournir des E/S aux clients.
+

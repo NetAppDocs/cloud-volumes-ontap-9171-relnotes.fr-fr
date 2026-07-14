@@ -18,6 +18,7 @@ Plusieurs configurations Cloud Volumes ONTAP sont prises en charge dans Azure.
 
 
 
+[[supported-configurations-by-license]]
 == Configurations prises en charge par licence
 
 Cloud Volumes ONTAP est disponible dans Azure en tant que système à nœud unique et en tant que paire haute disponibilité (HA) pour la tolérance aux pannes et les opérations non perturbatrices.
@@ -30,6 +31,7 @@ Pour connaître les spécifications des instances prises en charge, reportez-vou
 
 
 
+[[single-node-systems]]
 === Systèmes à nœud unique
 
 Vous pouvez choisir parmi les configurations de licences suivantes, basées sur la capacité ou sur le nombre de nœuds, lors du déploiement de Cloud Volumes ONTAP en tant que système à nœud unique dans Azure.
@@ -252,6 +254,7 @@ De même, si vous choisissez des disques SSD gérés Premium pour un environneme
 ====
 
 
+[[ha-pairs]]
 === paires haute disponibilité
 
 Vous pouvez choisir parmi les configurations suivantes lors du déploiement de Cloud Volumes ONTAP en tant que paire haute disponibilité dans Azure.
@@ -552,12 +555,14 @@ Remarques:
 ====
 
 
+[[supported-disk-sizes]]
 == Tailles de disque prises en charge
 
 Dans Azure, un agrégat peut contenir jusqu'à 12 disques qui sont tous du même type et de la même taille.
 
 
 
+[[single-node-systems]]
 === Systèmes à nœud unique
 
 Les systèmes à nœud unique utilisent Azure Managed Disks. Les tailles de disque suivantes sont prises en charge :
@@ -600,6 +605,7 @@ Les systèmes à nœud unique utilisent Azure Managed Disks. Les tailles de disq
 |===
 
 
+[[ha-pairs]]
 === paires haute disponibilité
 
 Les paires haute disponibilité utilisent des disques managés Azure. Les types et tailles de disques suivants sont pris en charge.
@@ -619,6 +625,7 @@ Les paires haute disponibilité utilisent des disques managés Azure. Les types 
 
 
 
+[[supported-regions]]
 == Régions prises en charge
 
 Pour la prise en charge des régions Azure, voir https://bluexp.netapp.com/cloud-volumes-global-regions["Cloud Volumes Régions mondiales"^].

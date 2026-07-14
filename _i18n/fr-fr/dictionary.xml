@@ -102,7 +102,6 @@
   <block id="98ade5346ada08656e0c7b517b695d0f" category="paragraph">Chaque licence Cloud Volumes ONTAP prend en charge différents types d'instances EC2. Pour votre commodité, le tableau ci-dessous indique le nombre de vCPU, la RAM et la bande passante pour chaque type d'instance pris en charge.<block ref="7fe5ce03f92ccda8dcb0aa0fab836a1f" category="inline-link-rx"></block>.</block>
   <block id="afea36f2c9999a231c58b7e9dcf3b16e" category="paragraph">Cloud Volumes ONTAP peut s'exécuter sur une instance EC2 réservée ou à la demande. Les solutions utilisant d'autres types d'instances ne sont pas prises en charge.</block>
   <block id="c7d741925ef81824617c6a2975104e27" category="inline-link">NetApp Technical Report 4383 : Caractérisation des performances de Cloud Volumes ONTAP dans Amazon Web Services avec des charges de travail applicatives</block>
-  <block id="b710bbf07a9ba1fa06f2e6f4e77a42db" category="paragraph">Les bandes passantes indiquées dans le tableau ci-dessous correspondent aux limites AWS documentées pour chaque type d'instance. Ces limites ne correspondent pas entièrement à ce que Cloud Volumes ONTAP peut fournir. Pour connaître les performances attendues, consultez<block ref="c23654021de34c23e6d408104aa3bf49" category="inline-link-rx"></block>.</block>
   <block id="794df3791a8c800841516007427a2aa3" category="cell">Licence</block>
   <block id="4a7243646d30fc1e81eca2df9826cc03" category="cell">Instance prise en charge</block>
   <block id="5d56dbd20d9ee1ab8a722ff12e331953" category="cell">vCPU</block>
@@ -890,4 +889,5 @@
   <block id="c7bcac860b797f27404d6345b36c3e95" category="paragraph">Le correctif P6 de Cloud Volumes ONTAP 9.17.1 est désormais disponible pour la mise à niveau sur AWS, Azure et Google Cloud. La Console vous invitera à mettre à niveau vos systèmes existants vers ce correctif.</block>
   <block id="4d90d21642c7222312363da000d7409f" category="inline-link-macro">Consultez la liste des bugs corrigés dans le patch P6</block>
   <block id="9cc7d1e306d6a5fe0c2d14528a2bbb0d" category="paragraph"><block ref="d1851ca2607b699d731598b241fc23ed" category="inline-link-macro-rx"></block> (NetApp Connexion au site d'assistance requise).</block>
+  <block id="fb83bdf454bf964031306f46d967b051" category="paragraph">Les bandes passantes indiquées dans le tableau ci-dessous correspondent aux limites AWS documentées pour chaque type d'instance. Ces limites ne correspondent pas entièrement à ce que Cloud Volumes ONTAP peut fournir. Pour connaître les performances attendues, consultez<block ref="f9e25e1e3616de01564541c204317f8f" category="inline-link-rx"></block>.</block>
 </blocks>

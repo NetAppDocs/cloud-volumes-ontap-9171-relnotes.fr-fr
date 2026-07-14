@@ -18,6 +18,7 @@ Plusieurs configurations Cloud Volumes ONTAP sont prises en charge dans Google C
 
 
 
+[[supported-configurations-by-license]]
 == Configurations prises en charge par licence
 
 Cloud Volumes ONTAP est disponible dans Google Cloud en tant que système à nœud unique et en tant que paire haute disponibilité (HA) de nœuds pour tolérance aux pannes et opérations non perturbatrices.
@@ -179,6 +180,7 @@ Pour plus d'informations sur les types de machines spécifiques, consultez la do
 
 
 
+[[supported-disk-sizes]]
 == Tailles de disque prises en charge
 
 Dans Google Cloud, un agrégat peut contenir jusqu'à 6 disques qui sont tous du même type et de la même taille. Les tailles de disque suivantes sont prises en charge :
@@ -195,6 +197,7 @@ Dans Google Cloud, un agrégat peut contenir jusqu'à 6 disques qui sont tous du
 
 
 
+[[supported-regions]]
 == Régions prises en charge
 
 Pour la prise en charge des régions Google Cloud, voir https://bluexp.netapp.com/cloud-volumes-global-regions["Cloud Volumes Régions mondiales"^].

@@ -18,6 +18,7 @@ Cloud Volumes ONTAP impose des limites de configuration de stockage afin de gara
 
 
 
+[[maximum-system-capacity-by-license]]
 == Capacité maximale du système par licence
 
 La capacité maximale d'un système Cloud Volumes ONTAP est déterminée par sa licence. La capacité maximale du système inclut le stockage sur disque ainsi que le stockage objet utilisé pour la hiérarchisation des données.
@@ -26,6 +27,7 @@ NetApp ne prend pas en charge le dépassement de la limite de capacité du syst�
 
 Pour certaines configurations, les limites de disque vous empêchent d'atteindre la limite de capacité uniquement avec des disques. Vous pouvez atteindre la limite de capacité par https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["transférer les données inactives vers le stockage objet"^]. Consultez les limites de disque ci-dessous pour plus de détails.
 
+[[cap-license-gcp]]
 .Limite de capacité pour les licences basées sur la capacité
 Avec une licence basée sur la capacité, chaque système Cloud Volumes ONTAP prend en charge la hiérarchisation vers le stockage objet. La capacité hiérarchisée totale peut évoluer jusqu'à la limite de compartiment du fournisseur de cloud. Bien que la licence n'impose aucune restriction de capacité, vous devez suivre les  https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf["Bonnes pratiques FabricPool"^] pour garantir des performances, une fiabilité et une rentabilité optimales lors de la configuration et de la gestion de la hiérarchisation. Reportez-vous à la  https://cloud.google.com/storage/docs/buckets["Documentation Google Cloud"^] pour plus d'informations.
 
@@ -59,6 +61,7 @@ Non, ce n'est pas le cas. Les données d'une paire haute disponibilité sont syn
 
 
 
+[[aggregate-limits]]
 == Limites des agrégats
 
 Cloud Volumes ONTAP regroupe les disques de Google Cloud Platform en _agrégats_. Les agrégats fournissent du stockage aux volumes.
@@ -92,6 +95,7 @@ Remarques:
 
 
 
+[[disk-and-tiering-limits]]
 == Limites de disque et de hiérarchisation
 
 Le tableau ci-dessous présente la capacité maximale du système avec les disques seuls, et avec les disques et la hiérarchisation des données froides vers le stockage objet. Les limites de disque concernent spécifiquement les disques contenant des données utilisateur. Les limites n'incluent pas le disque de démarrage, le disque racine ou la NVRAM.
@@ -120,6 +124,7 @@ Le tableau ci-dessous présente la capacité maximale du système avec les disqu
 
 
 
+[[storage-vm-limits]]
 == Limites de stockage des VM
 
 Certaines configurations vous permettent de créer des machines virtuelles de stockage supplémentaires (SVM) pour Cloud Volumes ONTAP.
@@ -164,6 +169,7 @@ Les machines virtuelles de stockage que vous configurez pour la reprise après s
 
 
 
+[[logical-storage-limits]]
 == Limites de stockage logiques
 
 [cols="22,22,56"]
@@ -206,6 +212,7 @@ Les machines virtuelles de stockage que vous configurez pour la reprise après s
 
 
 
+[[iscsi-storage-limits]]
 == limites de stockage iSCSI
 
 [cols="3*"]
@@ -247,6 +254,7 @@ Les machines virtuelles de stockage que vous configurez pour la reprise après s
 |===
 
 
+[[cloud-volumes-ontap-ha-pairs-do-not-support-immediate-storage-giveback]]
 == Les paires haute disponibilité Cloud Volumes ONTAP ne prennent pas en charge la restitution immédiate du stockage
 
 Après le redémarrage d'un nœud, le partenaire doit synchroniser les données avant de pouvoir restituer le stockage. Le temps nécessaire pour resynchroniser les données dépend du volume de données écrites par les clients pendant l'indisponibilité du nœud et de la vitesse d'écriture des données lors de la restitution.

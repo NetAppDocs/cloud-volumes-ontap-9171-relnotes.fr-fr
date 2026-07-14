@@ -20,6 +20,7 @@ Les limitations suivantes s'appliquent à Cloud Volumes ONTAP chez tous les four
 
 
 
+[[unsupported-ontap-features]]
 == Fonctionnalités ONTAP non prises en charge
 
 Les fonctionnalités suivantes ne sont pas prises en charge avec Cloud Volumes ONTAP :
@@ -52,12 +53,14 @@ https://kb.netapp.com/on-prem/ontap/da/NAS/NAS-KBs/What_are_SMB_Continuous_Avail
 
 
 
+[[maximum-concurrent-replication-operations]]
 == Opérations de réplication simultanées maximales
 
 Le nombre maximal de transferts simultanés SnapMirror ou SnapVault pour Cloud Volumes ONTAP est de 100 par nœud, quel que soit le type d'instance ou le type de machine.
 
 
 
+[[cloud-provider-snapshots-must-not-be-used-for-your-backup-and-recovery-plans]]
 == Les instantanés du fournisseur de cloud ne doivent pas être utilisés pour vos plans de sauvegarde et de restauration
 
 Il est déconseillé d'utiliser les snapshots de votre fournisseur de cloud dans le cadre de votre plan de sauvegarde et de restauration pour les données Cloud Volumes ONTAP. Vous devez toujours utiliser les copies Snapshot ONTAP ou des solutions de sauvegarde tierces pour sauvegarder et restaurer les données hébergées sur Cloud Volumes ONTAP.
@@ -69,24 +72,28 @@ NOTE: Les points de cohérence ONTAP dans le système de fichiers WAFL détermin
 
 
 
+[[cloud-volumes-ontap-supports-only-reserved-and-on-demand-vm-instances]]
 == Cloud Volumes ONTAP prend uniquement en charge les instances de VM réservées et à la demande
 
 Cloud Volumes ONTAP peut s'exécuter sur une instance de machine virtuelle réservée ou à la demande de votre fournisseur de cloud. Les autres types d'instances de machine virtuelle ne sont pas pris en charge.
 
 
 
+[[automatic-application-resource-management-solutions-shouldnt-be-used]]
 == Les solutions de gestion automatique des ressources applicatives ne doivent pas être utilisées
 
 Les solutions de gestion automatique des ressources applicatives ne doivent pas gérer les systèmes Cloud Volumes ONTAP. Cela peut entraîner une modification vers une configuration non prise en charge. Par exemple, la solution pourrait changer Cloud Volumes ONTAP en un type d’instance de machine virtuelle non pris en charge.
 
 
 
+[[software-updates-must-be-completed-by-netapp-console]]
 == Les mises à jour logicielles doivent être effectuées par NetApp Console
 
 Les mises à niveau de Cloud Volumes ONTAP doivent être effectuées depuis la NetApp Console. Vous ne devez pas mettre à niveau Cloud Volumes ONTAP en utilisant System Manager ou la CLI. Cela peut avoir un impact sur la stabilité du système.
 
 
 
+[[cloud-volumes-ontap-deployment-must-not-be-modified-from-your-cloud-providers-console]]
 == Le déploiement de Cloud Volumes ONTAP ne doit pas être modifié depuis la console de votre fournisseur de cloud
 
 Les modifications apportées à la configuration Cloud Volumes ONTAP depuis la console de votre fournisseur de cloud entraînent une configuration non prise en charge. Toute modification des ressources Cloud Volumes ONTAP créées et gérées par la Console peut impacter la stabilité du système et la capacité de la Console à gérer le système.
@@ -96,18 +103,21 @@ NOTE: Après le déploiement initial, la modification du nom de l'abonnement Azu
 
 
 
+[[disks-and-aggregates-must-be-managed-from-the-console]]
 == Les disques et les agrégats doivent être gérés depuis la Console
 
 Tous les disques et agrégats doivent être créés et supprimés directement depuis la Console. Vous ne devez pas effectuer ces actions depuis un autre outil de gestion. Le faire peut nuire à la stabilité du système, entraver la possibilité d'ajouter des disques à l'avenir et potentiellement générer des frais redondants de fournisseur de cloud.
 
 
 
+[[snapmanager-licensing-limitation]]
 == Limitation de licence SnapManager
 
 SnapManager par serveur sont prises en charge avec Cloud Volumes ONTAP. Les licences par système de stockage (SnapManager suite) ne sont pas prises en charge.
 
 
 
+[[limitations-with-third-party-agents-and-extensions]]
 == Limitations liées aux agents et extensions tiers
 
 Les agents tiers et les extensions de machine virtuelle ne sont pas pris en charge sur les instances de machine virtuelle Cloud Volumes ONTAP.

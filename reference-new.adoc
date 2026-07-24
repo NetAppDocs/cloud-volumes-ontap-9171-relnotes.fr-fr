@@ -20,6 +20,24 @@ De nouvelles fonctionnalités Cloud Volumes ONTAP sont également introduites da
 
 
 
+[[9-17-1-p8-22-july-2026]]
+== 9.17.1 P8 (22 juillet 2026)
+
+Le correctif P8 de Cloud Volumes ONTAP 9.17.1 est désormais disponible pour la mise à niveau sur AWS, Azure et Google Cloud. La Console vous invitera à mettre à niveau vos systèmes existants vers cette version corrective.
+
+link:https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.17.1P8["Consultez la liste des bugs corrigés dans le patch P8"^] (NetApp Connexion au site d'assistance requise).
+
+
+
+[[9-17-1-p7-22-july-2026]]
+== 9.17.1 P7 (22 juillet 2026)
+
+Le correctif P7 de Cloud Volumes ONTAP 9.17.1 est désormais disponible pour la mise à niveau sur AWS, Azure et Google Cloud. La Console vous invitera à mettre à niveau vos systèmes existants vers cette version corrective.
+
+link:https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.17.1P7["Consultez la liste des bugs corrigés dans le patch P7"^] (NetApp Connexion au site d'assistance requise).
+
+
+
 [[9-17-1-p6-17-april-2026]]
 == 9.17.1 P6 (17 avril 2026)
 
